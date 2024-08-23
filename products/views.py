@@ -14,4 +14,4 @@ class ProductViewSet(viewsets.ModelViewSet):
         filters.OrderingFilter,
     )
     filterset_fields = ["approved", "origin_country"]
-    search_fields = ["name"]
+    search_fields = ["name", "barcode"]
