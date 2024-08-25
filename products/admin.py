@@ -17,8 +17,9 @@ class ProductAdmin(admin.ModelAdmin):
         "name",
         "origin_country",
         "barcode",
+        "category",
     )
-    search_fields = ("name", "origin_country", "barcode")
+    search_fields = ("name", "origin_country", "barcode", "category")
     actions = [make_approved, make_not_approved]
 
 

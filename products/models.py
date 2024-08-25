@@ -7,12 +7,35 @@ class Product(models.Model):
         BANGLADESH = "BD", "Bangladesh"
         OTHERS = "OTHERS", "Others"
 
+    class ProductCategories(models.TextChoices):
+        DEFAULT = "DEFAULT", "Default"
+        PACKAGED_FOOD = "PF", "Packaged Food"
+        BEVERAGES = "BEV", "Beverages"
+        COOKING_ESSENTIALS = "CE", "Cooking Essentials"
+        BAKING_SUPPLIES = "BS", "Baking Supplies"
+        DAIRY_PRODUCTS = "DP", "Dairy Products"
+        MEAT_AND_SEAFOOD = "MS", "Meat and Seafood"
+        FROZEN_FOODS = "FF", "Frozen Foods"
+        PERSONAL_CARE = "PC", "Personal Care Products"
+        SANITARY_PRODUCTS = "SP", "Sanitary Products"
+        HOUSEHOLD_CLEANING = "HC", "Household Cleaning Supplies"
+        HEALTH_AND_WELLNESS = "HW", "Health and Wellness"
+        BABY_PRODUCTS = "BP", "Baby Products"
+        PET_SUPPLIES = "PS", "Pet Supplies"
+        INTERNATIONAL_FOODS = "IF", "International and Specialty Foods"
+
     name = models.CharField(max_length=255, help_text="Enter the name of the product.")
     origin_country = models.CharField(
         max_length=10,
         choices=CountryChoices.choices,
         default=CountryChoices.INDIA,
         help_text="Select the country where the product's company is based.",
+    )
+    category = models.CharField(
+        max_length=10,
+        choices=ProductCategories.choices,
+        default=ProductCategories.DEFAULT,
+        help_text="Select the category of the product.",
     )
     related_product = models.ManyToManyField(
         "self",
