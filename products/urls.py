@@ -1,7 +1,7 @@
-from django.urls import path, include
-from .views import ProductViewSet
+from django.urls import include, path
 from rest_framework import routers
 
+from .views import ProductViewSet
 
 router = routers.DefaultRouter()
 

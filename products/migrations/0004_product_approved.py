@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0003_product_barcode_product_details'),
+        ("products", "0003_product_barcode_product_details"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='approved',
-            field=models.BooleanField(default=False, help_text='Admin only: Check if verified.'),
+            model_name="product",
+            name="approved",
+            field=models.BooleanField(
+                default=False, help_text="Admin only: Check if verified."
+            ),
         ),
     ]

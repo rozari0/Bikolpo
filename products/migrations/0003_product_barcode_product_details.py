@@ -6,18 +6,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0002_remove_product_is_local_product_origin_country_and_more'),
+        ("products", "0002_remove_product_is_local_product_origin_country_and_more"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='barcode',
-            field=models.CharField(blank=True, help_text='Optional: Enter the barcode of the product.', max_length=20, null=True, unique=True),
+            model_name="product",
+            name="barcode",
+            field=models.CharField(
+                blank=True,
+                help_text="Optional: Enter the barcode of the product.",
+                max_length=20,
+                null=True,
+                unique=True,
+            ),
         ),
         migrations.AddField(
-            model_name='product',
-            name='details',
-            field=models.TextField(blank=True, help_text='Add extra details if you want ', null=True),
+            model_name="product",
+            name="details",
+            field=models.TextField(
+                blank=True, help_text="Add extra details if you want ", null=True
+            ),
         ),
     ]

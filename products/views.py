@@ -1,9 +1,8 @@
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters, viewsets
+
 from .models import Product
 from .serializers import ProductSerializer
-
-from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework import viewsets, filters
 
 
 class ProductViewSet(viewsets.ModelViewSet):
