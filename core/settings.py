@@ -135,7 +135,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-STATIC_URL = "static/"
+STATIC_URL = config("STATIC_URL", default="static/")
 
 
 # Default primary key field type
