@@ -11,6 +11,7 @@ psycopg2 = "*"
 djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
+whitenoise = "*"
 
 [dev-packages]
 
